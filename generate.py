@@ -1,4 +1,4 @@
-from mai.backend.catalogue_loaders import registry
+from mai_bias.backend.catalogue_loaders import registry
 
 # Template prefix with updated styling and centered navbar
 template_prefix = """
@@ -165,9 +165,9 @@ def prepare(catalogue, page_title):
 
 # Generate pages with the sidebar and content
 for page, (catalogue, page_title) in {
-    "datasets.html": (registry.dataset_loaders, "Dataset loaders"),
-    "models.html": (registry.model_loaders, "Model loaders"),
-    "analysis_methods.html": (registry.analysis_methods, "Analysis metrics"),
+    "datasets.html": (registry.dataset_loaders, "Datasets"),
+    "models.html": (registry.model_loaders, "Models"),
+    "analysis_methods.html": (registry.analysis_methods, "Analysis"),
 }.items():
     sidebar_content, main_content = prepare(catalogue, page_title)
     full_content = (
